@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWE Safety</title>
+    <link rel="shortcut icon" href="./assets/icons/icon-128x128.png">
+    <link rel="stylesheet" href="./styles.css">
+      <!-- PWA -->
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="./assets/icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="black">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="black">
+</head>
+
+<body>
+    <div id="loading-page">
+        <img src="./assets/img/logo.png" alt="logo" style="width: 100%; height: auto;">
+        <img src="./assets/img/load.png" alt="load" style="width: 50%; height: auto;">
+        <h5>loading</h5>
+        <div class="spinner"></div>
+    </div>
+
+    <div id="main-app" style="display: none;">
+        <img src="./assets/img/logo.png" alt="logo" style="width: 40%; height: auto; min-width: 300px;" >
+        <div class="tabContainer">
+            <div class="buttonContainer">
+                <button class="active"  onclick="openTab(event, 'Tab1')">HOME</button>
+                <button   onclick="openTab(event, 'Tab2')">BLOG</button>
+                <button   onclick="openTab(event, 'Tab3')">ABOUT ME</button>
+            </div>
+        </div>
+
+        <main>
+            <div id="Tab1" class="tabPanel" style="display: block;">
+                <p> </p>
+                <h1>Welcome to SW Embedded Safety</h1>
+                <p> </p>
+                <p>Here you will find valuable information about embedded software safety, including insightful blog posts and references to learning materials. </p>
+                <p>The goal is to help the embedded software community develop a better understanding of the different functional safety activities that need to be performed. </p>
+                <img src="./assets/img/Homepage.png" alt="logo" style="width: 120%; height: auto; min-width: 150px;" >
+            </div>
+
+            <div id="Tab2" class="tabPanel" style="display: none;">
+                <p> </p>
+                <h1>Latest Blog Posts</h1>
+                <p> </p>
+                <div class="blog-post">
+                    <h3>Post Title 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna ac aliquet consectetur, nisl elit ultrices nunc, ac tincidunt nisl nunc id justo.</p>
+                </div>
+                <div class="blog-post">
+                    <h3>Post Title 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna ac aliquet consectetur, nisl elit ultrices nunc, ac tincidunt nisl nunc id justo.</p>
+                </div>
+                <div class="blog-post">
+                    <h3>Post Title 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna ac aliquet consectetur, nisl elit ultrices nunc, ac tincidunt nisl nunc id justo.</p>
+                </div>
+            </div>
+
+            <div id="Tab3" class="tabPanel" style="display: none;">
+                <p> </p>
+                <h1>About Me</h1>
+                <p> </p>
+                <p>Hi, I'm Kevin Trevey and I'm excited to share my journey and expertise in the field of software safety and engineering with you.</p>
+
+                <h2>Professional Background</h2>
+                <p>I am currently a Software Safety Architect at Continental Automotive, where I specialize in automotive Electronic Control Units (ECUs). In this role, I derive software safety concepts and mechanisms from customer requirements, establish safety architectures within the Autosar Classic Framework, and review safety analyses post-implementation. My responsibilities also include leading third-party component qualifications and Safety Element out of Context (SeooC) activities, as well as offering guidance on best practices aligned with ISO26262 standards.</p>
+
+                <p>Before joining Continental, I served as a Software Safety Engineer at Renault-Nissan-Mitsubishi in Lardy, France. During my tenure there, I focused on safety software design for powertrain torque management, encompassing internal combustion, electric, and hybrid powertrains. My work involved ensuring compliance with ISO26262, validating safety requirements with system teams and suppliers, proposing and reviewing safety software designs, and conducting both Model-in-the-Loop (MIL) validations and vehicle testing.</p>
+
+                <h2>Early Career</h2>
+                <p>My career began with a series of internships and apprenticeships that provided a solid foundation in software safety and quality engineering. As an apprentice at IFP School, I specialized in software safety validation, implementing fault injection tests in Hardware-in-the-Loop (HIL) environments and developing procedures to detect desynchronizations between application and monitoring software.</p>
+
+                <p>I also gained valuable experience as a 3D Specialist at 3D Mecaprint, where I implemented 3D modeling and scanning environments for automotive parts and maintenance tools. Additionally, at FPT Industrial, I developed quality control methods for internal combustion engine assembly, optimizing leak tests, defining testing standards, and designing testing tools.</p>
+
+                <h2>Education and Skills</h2>
+                <p>My academic background includes a focused education in engineering, and I have continuously built upon this foundation with practical experience in various engineering and software safety roles. My technical skills span a range of tools and methodologies, including Matlab/Simulink, CAN exchange analysis, MIL validations, 3D modeling, Solidworks, and Arduino.</p>
+
+                <h2>Passion for Innovation</h2>
+                <p>Throughout my career, I have maintained a strong passion for innovation and continuous improvement. Whether it's optimizing quality control methods, designing robust safety architectures, or implementing cutting-edge validation procedures, I strive to deliver excellence in every project I undertake.</p>
+
+                <p>Thank you for visiting my website. I look forward to the opportunity to collaborate and bring my expertise to contribution</p>
+                <p> </p>
+                <p> </p>
+            </div>
+        </main>
+    </div>
+
+
+    <footer>
+        <h4>Powered by Kevin Trevey - All rights reserved</h4>
+    </footer>
+
+    <script src="./pdfjs/build/pdf.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/index.js"></script>
+
+    <script>
+        window.onload = function() {
+            // Hide the loading page
+            document.getElementById('loading-page').style.display = 'none';
+    
+            // Display the main app content
+            document.getElementById('main-app').style.display = 'block';
+            
+            document.getElementsByClassName("tabPanel")[0].style.display = "block";
+            document.getElementsByClassName("buttonContainer")[0].className += " active";
+        };
+    </script>
+    
+</body>
+</html>
